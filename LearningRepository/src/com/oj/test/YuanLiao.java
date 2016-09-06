@@ -9,8 +9,12 @@ public class YuanLiao {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 		String line;
-		while ((line=in.nextLine()).length()!=0) {
-			sb.append(line+" ");
+		while (in.hasNextLine()) {
+			if((line=in.nextLine()).length()!=0){
+				sb.append(line+" ");
+			}else {
+				break;
+			}
 		}
 		String str = new String(sb).trim();
 		System.out.println(str);

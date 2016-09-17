@@ -2,9 +2,12 @@ package com.oj.test;
 
 import java.util.*;
 
-public class Solution1 {
+/**
+ * Created by WangJun on 2016/9/6.
+ */
+public class Solution4{
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
@@ -35,12 +38,12 @@ public class Solution1 {
         int sum = 0;
         for (int i = 0; i < consumers.size(); i++) {
             Consumer con = consumers.get(i);
+
             for (int j = 0; j < tableMaxPeople.size(); j++) {
                 if(con.b <= tableMaxPeople.get(j)){
+
                     sum += con.c;
-                    consumers.remove(i);
                     tableMaxPeople.remove(j);
-                    i=0;
                     break;
                 }
             }
@@ -63,3 +66,4 @@ public class Solution1 {
 
 
 }
+

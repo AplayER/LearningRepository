@@ -5,32 +5,29 @@ import java.util.Scanner;
 
 public class Solution3 {
 
-	public static void main(String[] args) {
-		Scanner in= new Scanner(System.in);
-		while (in.hasNextInt()) {
-			int n = in.nextInt();
-			int m = in.nextInt();
-			int[] arr = new int[n+1];
-			Arrays.fill(arr, Integer.MAX_VALUE);
-			for(int i = 0;i<m;i++){
-				int d = in.nextInt();
-				int h = in.nextInt();
-				arr[d] = h;
-			}
-			if(m==n){
-				Arrays.sort(arr);
-				System.out.println(arr[arr.length-1]);
-			}
-			for (int i = 0; i < arr.length-1; i++) {
-				if(arr[i]!=Integer.MAX_VALUE&&arr[i+1]-arr[i]<=1||
-						arr[i+1]-arr[i]>=-1){
-					continue;
-				}else{
-					System.out.println("IMPOSSIBLE");
-					break;
-				}
-			}
+	public static void main(String[] args){
+        int[] t = {1,3,2,4};
+        int[] s = {1,3,2,4};
+        sort(t, s);
+        for (int i = 0; i < s.length; i++) {
+			System.out.println();
 		}
-	}
-
+    }
+	
+	 public static void sort(int[] persons,int[] money){
+	        int p = 0;
+	        int min;
+	        int tmp = 0;
+	        for(int i=0;i<persons.length;i++){
+	            min = Integer.MIN_VALUE;
+	            for(int j=i;j<persons.length;j++){
+	                if(min>persons[j]){
+	                    min = persons[j];
+	                    tmp = money[j];
+	                }
+	            }
+	            persons[i] = min;
+	            money[i] = tmp;
+	        }
+	    }
 }
